@@ -6,7 +6,6 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
- Armazena todas as conexões ativas
 const clients = new Set();
 
  Middleware para parse de JSON
@@ -74,4 +73,5 @@ server.listen(PORT, () = {
   console.log(`📡 WebSocket wslocalhost${PORT}`);
   console.log(`🔗 Webhook httplocalhost${PORT}webhook`);
   console.log(`💚 Health httplocalhost${PORT}health`);
+
 });

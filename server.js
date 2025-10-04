@@ -20,7 +20,6 @@ app.get('health', (req, res) = {
   });
 });
 
- Endpoint para receber dados do n8n
 app.post('webhook', (req, res) = {
   console.log('📨 Dados recebidos do n8n', JSON.stringify(req.body, null, 2));
   
@@ -39,12 +38,10 @@ app.post('webhook', (req, res) = {
   res.json({ success true, clients sent });
 });
 
- Gerenciamento de conexões WebSocket
 wss.on('connection', (ws) = {
   console.log('🔌 Novo cliente conectado');
   clients.add(ws);
   
-   Envia confirmação de conexão
   ws.send(JSON.stringify({ 
     type 'connection', 
     message 'Conectado ao servidor WebSocket',
@@ -75,3 +72,4 @@ server.listen(PORT, () = {
   console.log(`💚 Health httplocalhost${PORT}health`);
 
 });
+
